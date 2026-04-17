@@ -1,0 +1,342 @@
+:root {
+    /* Color Palette derived exactly from the provided poster */
+    --bg-light: #e6f0ff;
+    --bg-pink: #fdf2ff;
+    --text-dark-blue: #113f70;
+    --text-bright-blue: #006ddb;
+
+    /* Gradients */
+    --grad-about: linear-gradient(90deg, #1fa2ff, #f21fe6);
+    --grad-us: linear-gradient(90deg, #2b56f5, #a43efa);
+    --grad-dr-bg: linear-gradient(90deg, rgba(166, 226, 255, 0.4), rgba(255, 192, 235, 0.4));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.poster-container {
+    width: 100%;
+    max-width: 800px;
+    background: linear-gradient(135deg, #e4f9ff, #e3ebff 40%, #fae6ff 100%);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Inner white border effect if needed, but the original seems flush to the edge
+   with just a varied background gradient. We will add a small padding wrapper. */
+.poster-inner {
+    padding: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- HEADER / LOGO --- */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* right align the logo and tagline */
+    margin-bottom: 2rem;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dr-box {
+    background: linear-gradient(135deg, #ffcbf1, #b5e4ff);
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dr-icons {
+    display: flex;
+    gap: 4px;
+    font-size: 0.5rem;
+    color: #448cfb;
+    margin-bottom: 5px;
+}
+
+.dr-icons .code-icon {
+    font-weight: 800;
+}
+
+.dr-letters {
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.letter-d {
+    color: #f4309a;
+}
+
+.letter-r {
+    color: #00d2ff;
+}
+
+.company-name {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.dilshaj {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: var(--text-dark-blue);
+}
+
+.infotech {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--text-dark-blue);
+}
+
+.tagline {
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--text-dark-blue);
+    line-height: 1.3;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.82;
+    margin-top: 1rem;
+}
+
+.about-text,
+.us-text {
+    font-size: 9rem;
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.about-text {
+    background: var(--grad-about);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.us-text {
+    background: var(--grad-us);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-left: -5px;
+    /* slight left pull like in the poster */
+}
+
+/* Astronaut Generated Image */
+.hero-image {
+    position: absolute;
+    right: 20px;
+    top: -30px;
+}
+
+.generated-astronaut {
+    width: 240px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+    mix-blend-mode: multiply;
+    /* Knocks out the white background! */
+    filter: drop-shadow(-10px 15px 20px rgba(0, 0, 0, 0.2));
+    animation: float 6s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* --- SLOGAN --- */
+.slogan {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--text-bright-blue);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1px;
+}
+
+/* --- DIVIDER --- */
+.divider {
+    height: 10px;
+    width: 60%;
+    margin-left: 20%;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.25);
+    margin-bottom: 3rem;
+}
+
+/* --- CONTENT AREA --- */
+.content-area {
+    position: relative;
+}
+
+.bg-dr {
+    position: absolute;
+    font-size: 25rem;
+    font-weight: 900;
+    top: -40px;
+    left: -20px;
+    background: var(--grad-dr-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    z-index: 0;
+    pointer-events: none;
+    letter-spacing: -20px;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    /* Achieving the white text with blue outline glow like the image */
+    -webkit-text-stroke: 1.5px #a0c4ff;
+    text-shadow: 0px 4px 10px rgba(160, 196, 255, 0.7);
+    margin-bottom: 0.5rem;
+    z-index: 2;
+    position: relative;
+    line-height: 1.1;
+}
+
+.desc-text {
+    font-size: 1.05rem;
+    color: var(--text-dark-blue);
+    line-height: 1.5;
+    font-weight: 500;
+    z-index: 2;
+    position: relative;
+}
+
+/* Who Are We */
+.who-are-we {
+    text-align: right;
+    margin-bottom: 3rem;
+    padding-left: 10%;
+    /* give some space from left */
+}
+
+/* What We Do */
+.what-we-do-wrapper {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    min-height: 250px;
+}
+
+.what-we-do {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+/* Phone Placeholder */
+.phone-image {
+    position: absolute;
+    bottom: -50px;
+    right: -10px;
+    z-index: 10;
+    margin-right: 80px;
+    margin-bottom: 20px;
+}
+
+.generated-phone {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    transform: rotate(5deg);
+    filter: drop-shadow(-15px 15px 20px rgba(0, 0, 0, 0.2));
+    animation: floatPhone 7s ease-in-out infinite alternate;
+}
+
+@keyframes floatPhone {
+    0% {
+        transform: rotate(-10deg) translateY(0px);
+    }
+
+    100% {
+        transform: rotate(-10deg) translateY(-20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .poster-inner {
+        padding: 2rem;
+    }
+
+    .about-text,
+    .us-text {
+        font-size: 7rem;
+    }
+
+    .slogan {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+
+    .desc-text {
+        font-size: 0.95rem;
+    }
+
+    .bg-dr {
+        font-size: 15rem;
+        top: 0;
+    }
+
+    .image-placeholder {
+        display: none;
+        /* Hide placeholders on small screens to keep layout clean */
+    }
+}
